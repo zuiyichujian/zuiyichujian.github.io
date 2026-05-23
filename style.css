@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f7f4;
+  font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', 'Source Han Serif SC', serif;
+  color: #3e3a35;
+  line-height: 1.6;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 整体容器 */
+.blog-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* 头部区域 */
+.blog-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 2px solid #e5ded4;
+  padding-bottom: 2rem;
+}
+
+.blog-title {
+  font-size: 3.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #4a453d;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+}
+
+.blog-subtitle {
+  font-size: 1.1rem;
+  color: #8c8175;
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5f5549;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 4px;
+}
+
+.nav-links a:hover {
+  color: #b45f4c;
+  border-bottom-color: #b45f4c;
+}
+
+/* 主体：文章区 + 侧边栏 */
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+/* 文章列表 */
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-left: 5px solid #b45f4c;
+  padding-left: 1rem;
+  margin-bottom: 0.3rem;
+  color: #4a453d;
+  letter-spacing: 0.5px;
+}
+
+.post-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+  border: 1px solid #f0e9e0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+  border-color: #dacbbc;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+  color: #9b8e80;
+  flex-wrap: wrap;
+}
+
+.post-meta i {
+  margin-right: 4px;
+  font-size: 1rem;
+  color: #b45f4c;
+  vertical-align: middle;
+}
+
+.post-category {
+  background-color: #f2e9de;
+  color: #6b5d4f;
+  padding: 0.2rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.post-title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #3a332b;
+  line-height: 1.3;
+  margin: 0.2rem 0 0.3rem;
+  transition: color 0.2s;
+}
+
+.post-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-title a:hover {
+  color: #b45f4c;
+}
+
+.post-excerpt {
+  color: #5f5951;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+
+.read-more {
+  align-self: flex-start;
+  text-decoration: none;
+  color: #b45f4c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.read-more i {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.read-more:hover {
+  gap: 10px;
+  border-bottom-color: #b45f4c;
+}
+
+.read-more:hover i {
+  transform: translateX(4px);
+}
+
+/* 侧边栏 */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.about-widget {
+  background: #fffaf5;
+  border-radius: 16px;
+  padding: 1.8rem 1.8rem;
+  border: 1px solid #efe3d5;
+  text-align: center;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #d6c6b5, #b8a088);
+  border-radius: 50%;
+  margin: 0 auto 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.about-widget h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4a4238;
+  margin-bottom: 0.4rem;
+}
+
+.about-widget .signature {
+  font-style: italic;
+  color: #8b7b6b;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.about-widget p {
+  color: #5e554a;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.widget {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem 1.8rem;
+  border: 1px solid #efe3d5;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+}
+
+.widget h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: #4a453d;
+  border-bottom: 1px dashed #dbcebd;
+  padding-bottom: 0.5rem;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  background: #f3ede6;
+  color: #5e5142;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+}
+
+.tag:hover {
+  background: #b45f4c;
+  color: white;
+}
+
+.recent-post-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #f0e8dd;
+}
+
+.recent-post-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.recent-post-icon {
+  font-size: 1.5rem;
+  color: #b45f4c;
+  opacity: 0.8;
+}
+
+.recent-post-text a {
+  text-decoration: none;
+  color: #4a4238;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.recent-post-text a:hover {
+  color: #b45f4c;
+}
+
+.recent-post-text .date-small {
+  font-size: 0.75rem;
+  color: #ab9d8c;
+  display: block;
+  margin-top: 2px;
+}
+
+/* 页脚 */
+.blog-footer {
+  margin-top: 2rem;
+  border-top: 1px solid #e2d9ce;
+  padding-top: 2rem;
+  text-align: center;
+  color: #8d8174;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+  color: #7a6e60;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #b45f4c;
+}
+
+/* 响应式 */
+@media (max-width: 750px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  .blog-title {
+    font-size: 2.5rem;
+  }
+}
